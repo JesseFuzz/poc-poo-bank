@@ -1,3 +1,8 @@
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 public abstract class Conta implements ContaInterface{ //ContaInterface é uma classe abstrata e ela só define o contrato de uso, então eu preciso sobrescrever os métodos aqui dentro
     //uma classe abstrata não pode ser instanciada. Outra forma além de sobrescrever seria tornar ela abstrata e.g. public abstract class Conta implements ContaInterface{}
 
@@ -23,6 +28,7 @@ public abstract class Conta implements ContaInterface{ //ContaInterface é uma c
         System.out.println(String.format("Agencia: %d", this.agencia));
         System.out.println(String.format("Numero: %d", this.numero));
         System.out.println(String.format("Saldo: %.2f", this.saldo));
+        //System.out.println(String.format("lista de Clientes: %s", listaDeClientes()));
     }
 
 
@@ -42,6 +48,15 @@ public abstract class Conta implements ContaInterface{ //ContaInterface é uma c
         contaDestino.depositar(valor);
 
     }
+
+    @Override
+    public void listaDeClientes() {
+        String nomes =cliente.getNome();
+        List<String> nome = new ArrayList<>();
+        nome.add(nomes);
+        System.out.println("essa é a lista de clientes" +nome);
+    }
+
 
     public int getAgencia() {
         return agencia;

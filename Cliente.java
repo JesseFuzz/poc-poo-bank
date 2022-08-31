@@ -1,6 +1,15 @@
+import java.util.ArrayList;
+
 public class Cliente {
 
-    private String nome;
+    public String nome;
+
+
+    public ArrayList<String> getAllClientes(){
+        ArrayList<String> nomesContas = new ArrayList<>();
+        nomesContas.add(this.getNome());
+        return nomesContas;
+    }
 
     public String getNome() {
         return nome;
